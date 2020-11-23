@@ -168,5 +168,16 @@ http://es6-features.org/#Constants
 https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/
 
 
+1. download the app 
+2. open in VS Code
+3. type "npm i" in the terminal (to install the node packages)
+4. in another terminal type "npm run compile"
+5. open another terminal (or in the same terminal) type "npm run load"
+6. to run the "test.js" file in the HRMS app, use "node .\playground\test.js"
+
+the other application: "js-programming" can be simply opened in VS Code and index.html file can be double-clicked to open in the browser
+
+
+
 
 
