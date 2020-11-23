@@ -1,0 +1,120 @@
+1. JS
+   a. creating objects, prototype based programming in JS, closure and lexical this problem, context and this keyword
+   b. new features in JS: 
+      class, extends, super, let, const, spread operator, object destructuring, rest parameter, templated string, arrow operator, generator functions etc...
+   c. node js
+   d. modules in JS
+   c. TypeScript
+  
+2. React JS
+   a. Client side framework/library Vs. server side
+   b. Introduction
+   c. advantages
+   d. comparison with other framework/libraries (Angular/jQuery etc.)
+
+3. Create application
+   a. without help of any tool
+   b. with the help of a tool: create-react-app
+
+4. concepts
+   a. primary concepts
+   b. advanced concepts
+   c. new feature in React: Hooks in React JS (16.8)
+
+5. Case study: product management system
+
+6. deployment:
+   a. dockerize the application
+   b. host the docker container in Azure
+
+
+Useful Extensions for VS Code:
+HTML Boilerplate
+vscode-icons
+JavaScript (ES6) snippets
+Babel JavaScript
+ES7 React/Redux/React-Native/JS snippets
+Babel ES6/ES7
+Prettier - Code formatter
+
+
+ECMAScript -> guideline language for every scripting language (w3c)
+2015: ES6
+ES7, ES8, ES9
+
+let: locally scoped variable
+
+create objects in JS:
+
+a. Object literal
+b. Object.create() method
+c. constructor function
+
+d. class keyword
+
+class A{public int x;}
+class B:A{}
+
+B obj = new B();
+
+Object to Object inheritance
+
+HTML DOM:
+
+<html>
+<head>
+   <title>
+   </title>
+</head>
+<body>
+   <div id='main'></div> //HTML Div Element
+  <script..../>
+</body>
+</html>
+
+document.getElementById('main')
+
+window>
+document-->
+html and body
+
+every object in JS is linked to another object via __proto__ property. that linked object acts as base object for th JS object you created.
+
+every function that you write in JS is contextually bound to some object (by default Window object in web application and Global object in Node JS application)
+again every constructor function is supplied one object by JS runtime, known as Prototype object of that constructor function
+The prototype objects are generally linked Object function's prototype object
+Prototype object acts as base object for every object that is created based on the constructor function call
+
+chaining the objects in this way is known prototype chain
+
+in JS Object to Object inheritance is provided/facilitated via prototype chain
+
+create two classes:
+
+developer: 
+value properties:
+name, id, basicPayment, daPayment, hraPayment, incentivePayment
+functional properties:
+calculateSalay()--> returns total salary
+
+hr: 
+value properties:
+name, id, basicPayment, daPayment, hraPayment, gratuityPayment
+
+functional properties:
+calculateSalay()--> returns total salary
+
+create an object each of those classes
+place them in an array
+
+calculate and print salary:
+iterate through that array, pick up an object and then call printSalary function:
+
+in order to print salary of any employee, create a function separately: printSalary(salaryFnRef)--> to display the total salary of any employee
+
+DOT NOT PASS ANY EMPLOYEE REFERENCE TO THIS FUNCTION. JUST PASS EMPLOYEE'S CALCULATESALARY FUNCTION REFERENCE TO PRINTSALARY FUNCTION
+
+
+
+
+
