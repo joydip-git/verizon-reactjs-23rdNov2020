@@ -1,9 +1,9 @@
-class employee {
-    name;
-    id;
-    basicPayment;
-    daPayment;
-    hraPayment;
+export class employee {
+    // name;
+    // id;
+    // basicPayment;
+    // daPayment;
+    // hraPayment;
     constructor(name, id, basic, da, hra) {
         this.basicPayment = basic;
         this.daPayment = da;
@@ -16,6 +16,6 @@ class employee {
     }
 }
 //const check = () => console.log('check')
-module.exports = {
-    employee //employee:employee
-}
+// module.exports = {
+//     employee //employee:employee
+// }

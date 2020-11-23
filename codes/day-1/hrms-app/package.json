@@ -1,0 +1,19 @@
+{
+  "name": "hrms-app",
+  "version": "1.0.0",
+  "description": "simple webapp with modular concept",
+  "main": ".\\src\\index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "module"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.7",
+    "@babel/core": "^7.12.7",
+    "lite-server": "^2.6.1"
+  }
+}

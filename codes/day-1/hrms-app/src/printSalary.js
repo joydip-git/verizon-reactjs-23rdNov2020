@@ -2,4 +2,7 @@ const printSalary = (printSalaryFnRef) => {
     return printSalaryFnRef();
 }
 
-module.exports = printSalary;
+export const add = (a, b) => (a + b);
+export default printSalary;
+
+// module.exports = printSalary;

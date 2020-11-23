@@ -129,7 +129,17 @@ code in JS (A.js) -- attaching with index.html ---> Browser runtime (Need module
 module and module format:
 module--> simple API to expose members of a file (JS), so that they can be used from other files
 format: Common JS, asynchronous module definition (AMD), universal module definition (UMD), System JS, ES6 module
-loader:
+loader: Require JS, systemjs.register()
+
+a. convert ES6 module format code --> AMD module format code [browser doesn't support modular concept. even if you use Require JS as module loader, that might not be able to understand any format other than AMD]
+
+b. convert ES6 featured code --> older version of JS code (<ES6) [reason: broswer incompatibility]
+
+answer: transpiltaion
+transpiler: a s/w which transpile your ES6 JS code into vanila/old JS code
+different transpilers: Babel, TypeScript compiler, etc....
+
+npm i @babel/core @babel/cli --save-dev
 
 
 
