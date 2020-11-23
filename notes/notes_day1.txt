@@ -114,6 +114,20 @@ in order to print salary of any employee, create a function separately: printSal
 
 DOT NOT PASS ANY EMPLOYEE REFERENCE TO THIS FUNCTION. JUST PASS EMPLOYEE'S CALCULATESALARY FUNCTION REFERENCE TO PRINTSALARY FUNCTION
 
+web application
+desktop application/native application (NodeJS)
+
+Node JS: server side framework
+create asynchronous, event-loop based application (using JS) which can run in a machine (reading data from or writing data into a file, create a RESTFul API server, etc...)
+
+Node JS --> V8 engine
+
+code in JS (A.js) ---> Node runtime (Common JS module loader) ---> V8 engine
+
+module and module format:
+module--> simple API to expose members of a file (JS), so that they can be used from other files
+format: Common JS, asynchronous module definition (AMD), universal module definition (UMD), System JS, ES6 module
+loader:
 
 
 

@@ -1,4 +1,6 @@
-class hr extends employee {
+const employeeModule = require('./employee')
+
+class hr extends employeeModule.employee {
     gratuityPayment;
     constructor(name, id, basic, da, hra, gratuity) {
         super(name, id, basic, da, hra);
@@ -7,4 +9,7 @@ class hr extends employee {
     calculateSalary = () => {
         return super.calculateSalary() + this.gratuityPayment;
     }
+}
+module.exports = {
+    hr
 }

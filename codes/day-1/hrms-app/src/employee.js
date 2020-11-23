@@ -15,3 +15,7 @@ class employee {
         return this.basicPayment + this.daPayment + this.hraPayment;
     }
 }
+
+module.exports = {
+    employee //employee:employee
+}

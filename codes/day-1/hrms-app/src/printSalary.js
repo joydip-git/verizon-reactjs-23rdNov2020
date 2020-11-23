@@ -1,3 +1,5 @@
 const printSalary = (printSalaryFnRef) => {
-    console.log(printSalaryFnRef());
+    return printSalaryFnRef();
 }
+
+module.exports = printSalary;
