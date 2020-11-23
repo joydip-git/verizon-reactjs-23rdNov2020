@@ -1,7 +1,7 @@
 1. JS
    a. creating objects, prototype based programming in JS, closure and lexical this problem, context and this keyword
    b. new features in JS: 
-      class, extends, super, let, const, spread operator, object destructuring, rest parameter, templated string, arrow operator, generator functions etc...
+      class, extends, super, let, const,  object destructuring, templated string, arrow operator, spread operator, rest parameter, generator functions etc...
    c. node js
    d. modules in JS
    c. TypeScript
@@ -140,6 +140,24 @@ transpiler: a s/w which transpile your ES6 JS code into vanila/old JS code
 different transpilers: Babel, TypeScript compiler, etc....
 
 npm i @babel/core @babel/cli --save-dev
+
+command: .\node_modules\.bin\babel src --out-dir build
+
+a. parsing (A.js)
+b. conversion (ES6 features-->old features)
+c. print (A.js)
+
+plugins: 
+a. @babel/plugin-transform-modules-amd (converts ES6 module format to AMD module format)
+b. @babel/plugin-proposal-class-properties (allows to use class properties)
+
+presets: 
+a. @babel/preset-env (includes lots of plugins related to other new features except modules and experimental features)
+
+npm i @babel/plugin-transform-modules-amd @babel/plugin-proposal-class-properties @babel/preset-env --save-dev
+
+.babelrc
+
 
 
 

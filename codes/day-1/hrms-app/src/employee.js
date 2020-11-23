@@ -1,9 +1,9 @@
 export class employee {
-    // name;
-    // id;
-    // basicPayment;
-    // daPayment;
-    // hraPayment;
+    name;
+    id;
+    basicPayment;
+    daPayment;
+    hraPayment;
     constructor(name, id, basic, da, hra) {
         this.basicPayment = basic;
         this.daPayment = da;

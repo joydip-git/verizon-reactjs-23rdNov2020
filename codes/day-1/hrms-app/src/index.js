@@ -17,11 +17,11 @@ const sunilHr = new hr('anil', 2, 1500, 2500, 3500, 4500);
 employees.push(anilDeveloper);
 employees.push(sunilHr);
 
-//const appDiv = document.getElementById('app');
+const appDiv = document.getElementById('app');
 for (let i = 0; i < employees.length; i++) {
     let employeeSalary = salaryFn(employees[i].calculateSalary);
     console.log(employeeSalary)
-    // appDiv.innerHTML += employeeSalary;
-    // appDiv.innerHTML += '<br/>'
+    appDiv.innerHTML += employeeSalary;
+    appDiv.innerHTML += '<br/>'
 }
 console.log(add(10, 20))
