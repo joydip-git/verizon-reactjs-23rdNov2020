@@ -9,7 +9,7 @@ class person {
         this.personLoc = loc;
         this.personProfession = profession;
     }
-    print() {
+    print = () => {
         return `
         ${this.personName}, 
         ${this.personLoc}, 
