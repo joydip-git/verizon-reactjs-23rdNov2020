@@ -1,7 +1,7 @@
 1. JS
-   a. creating objects, prototype based programming in JS, closure and lexical this problem, context and this keyword
+   a. creating objects, prototype based programming in JS, closure and lexical this problem with context change
    b. new features in JS: 
-      class, extends, super, let, const,  object destructuring, templated string, arrow operator, spread operator, rest parameter, generator functions etc...
+      class, class properties, extends, super, let, const,  object destructuring, templated string, arrow operator, spread operator, rest parameter, generator functions etc...
    c. node js
    d. modules in JS
    c. TypeScript
