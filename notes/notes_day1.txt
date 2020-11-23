@@ -158,6 +158,14 @@ npm i @babel/plugin-transform-modules-amd @babel/plugin-proposal-class-propertie
 
 .babelrc
 
+useful links:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
+https://medium.com/javascript-in-plain-english/how-to-use-the-generator-function-in-javascript-6ab00380cc5f
+http://es6-features.org/#Constants
+https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/
 
 
 
