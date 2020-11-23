@@ -124,6 +124,8 @@ Node JS --> V8 engine
 
 code in JS (A.js) ---> Node runtime (Common JS module loader) ---> V8 engine
 
+code in JS (A.js) -- attaching with index.html ---> Browser runtime (Need module loader) ---> V8 engine
+
 module and module format:
 module--> simple API to expose members of a file (JS), so that they can be used from other files
 format: Common JS, asynchronous module definition (AMD), universal module definition (UMD), System JS, ES6 module

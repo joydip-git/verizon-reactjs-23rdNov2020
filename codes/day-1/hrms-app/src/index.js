@@ -13,7 +13,8 @@ employees.push(sunilHr);
 //const appDiv = document.getElementById('app');
 for (let i = 0; i < employees.length; i++) {
     let employeeSalary = salaryFn(employees[i].calculateSalary);
+    console.log(employeeSalary)
     // appDiv.innerHTML += employeeSalary;
     // appDiv.innerHTML += '<br/>'
-    console.log(employeeSalary)
+    
 }

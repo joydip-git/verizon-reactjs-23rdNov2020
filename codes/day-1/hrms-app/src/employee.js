@@ -15,7 +15,7 @@ class employee {
         return this.basicPayment + this.daPayment + this.hraPayment;
     }
 }
-
+//const check = () => console.log('check')
 module.exports = {
     employee //employee:employee
 }
