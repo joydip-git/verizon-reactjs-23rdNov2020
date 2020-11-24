@@ -1,0 +1,30 @@
+{
+  "name": "non-react-app",
+  "version": "1.0.0",
+  "description": "non react application but with same philosophy of component",
+  "main": "./src/index.js",
+  "scripts": {
+    "compile": "babel src --out-dir build",
+    "load": "lite-server -w"
+  },
+  "keywords": [
+    "component",
+    "babel",
+    "module",
+    "transpiler"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-modules-amd": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
