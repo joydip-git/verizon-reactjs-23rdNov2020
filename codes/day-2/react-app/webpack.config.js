@@ -17,7 +17,7 @@ const webpackConfigObj = {
         })
     ],
     devServer: {
-        contnetBase: path.resolve(__dirname, 'build'),
+        contentBase: path.resolve(__dirname, 'build'),
         port: 4000
     },
     devtool: 'inline-source-map',

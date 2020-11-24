@@ -1,5 +1,5 @@
 {
-  "name": "non-react-app",
+  "name": "react-app",
   "version": "1.0.0",
   "description": "non react application but with same philosophy of component",
   "main": "./src/index.js",
