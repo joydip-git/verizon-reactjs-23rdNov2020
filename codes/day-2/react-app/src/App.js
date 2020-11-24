@@ -12,22 +12,6 @@ const App = () => {
         window.alert('welcome to web component')
     }
 
-    /*
-    const headerElement = WebComponentHeader({ headerData: headerContent, value: 10, handler: sayHi })
-    console.log(headerElement)
-    const paraElement = WebComponentPara({ paraData: paraContent, data: 'joydip', caller: sayHi });
-    console.log(paraElement)
-    const appDesign = React.createElement(
-        'article',
-        {
-            id: 'mainArticle'
-        },
-        [headerElement, paraElement])
-
-        */
-    // const headerElement = <WebComponentHeader headerData={headerContent} value={10} handler={sayHi} />
-    // const paraElement = <WebComponentPara paraData={paraContent} data={'joydip'} caller={sayHi} />
-
     const appDesign = (
         <article id='mainArticle'>
             <WebComponentHeader headerData={headerContent} value={10} handler={sayHi} />
@@ -37,15 +21,11 @@ const App = () => {
     return appDesign;
 }
 export default App;
-
 /**
- * {
- *   type:'article',
- *   key:null,
- *   ref:null,
- *   props:{
- *     children:[headerElement, paraElement]
- *   }
+ * const properties ={
+ * headerData:'',
+ * value:10,
+ * handler:sayHi
  * }
- *
+ * const headerElement = WebComponentHeader(properties)
  */

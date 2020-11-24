@@ -10,19 +10,7 @@ const WebComponentPara = (args) => {
         borderRadius: '2px',
         margin: '10px'
     }
-
-    /*
-    const paraElement = React.createElement(
-        'p',
-        {
-            id: 'contentPara',
-            onClick: args.caller,
-            style: paraStyle
-        },
-        args.paraData);   
-    */
-
-    //JSX--> pseudo HTML element
+    
     const paraElement = (
         <p id='contentPara' style={paraStyle} onClick={args.caller}>
             {args.paraData}

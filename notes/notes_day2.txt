@@ -6,3 +6,48 @@ philosophy of creating an application which is component based
 Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
 
 Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.
+
+a. react packages:
+i. react ii. react-dom
+
+b. transplier packages:
+a. babel: 
+i. core: @babel/core
+ii. cli: @babel/cli
+
+b. babel plugins:
+i. module: @babel/plugin-transform-modules-amd
+ii. experimental features (class-properties): @babel/plugin-proposal-class-properties
+
+c. babel presets:
+i. ES6 plugins: @babel/preset-env (ES6 code --> plain/vanila JavaScript code)
+ii. React JSX: @babel/preset-react (JSX --> JavaScript)
+
+d. bundler packages: (such as webpack, browserify etc.)
+i. core: webpack
+ii. cli: webpack-cli
+iii. plugins: html-webpack-plugin
+iii. loaders (transformers): babel-loader, css-loader and style-loader, file-loader, csv-loader, xml-loader, html-loader
+
+webpack --(babel-loader)--> babel--(transpile)--> older version of JS code
+        <--                <--
+1. transpile all the source code
+
+2. merge transpiled code from all the files into a single JS file (JS bundle) and compress the same to minify
+3. merge all the CSS styles from various CSS files into a single CSS file (CSS bundle) and compress the same to minify
+
+4. take the index.html file template and produce an HTML file for build package, which will also be linked to the bundled JS (using script tag) and CSS file (using link tag) and place the same inside the build package folder alongside the bundled JS and CSS files and compress the same to minify
+
+e. app development server:
+webpack-dev-server
+
+npm i webpack webpack-cli babel-loader css-loader style-loader html-loader file-loader html-webpack-plugin clean-webpack-plugin webpack-dev-server --save-dev
+
+create a configuration file for webpack
+create scripts for running webpack in dev and prod mode
+
+
+
+
+
+
