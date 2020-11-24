@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const WebComponentPara = (args) => {
 
@@ -10,13 +10,30 @@ const WebComponentPara = (args) => {
         borderRadius: '2px',
         margin: '10px'
     }
-    
+    const paraMessage = 'message from para component';
     const paraElement = (
-        <p id='contentPara' style={paraStyle} onClick={args.caller}>
-            {args.paraData}
-        </p>
+        // <Fragment>
+        <>
+            <span>
+                Author Name:&nbsp;{args.data}
+                <br />
+            </span>
+            <p id='contentPara' style={paraStyle} onClick={() => args.caller(paraMessage)}>
+
+                Data:&nbsp;{args.paraData}
+            </p>
+        </>
+        //</Fragment>
     )
 
     return paraElement;
 }
 export default WebComponentPara;
+
+/*
+class Frag extends Component {
+    render() {
+        return this.props.children;
+    }
+}
+*/

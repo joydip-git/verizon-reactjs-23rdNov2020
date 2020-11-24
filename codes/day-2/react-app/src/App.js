@@ -1,33 +1,58 @@
 import WebComponentHeader from './WebComponentHeader'
 import WebComponentPara from './WebComponentPara'
 import Sample from './Sample'
-import React from 'react'
+import React, { Component } from 'react'
 
-const App = () => {
-    const headerContent = 'Introduction to Web Component using React JS';
-    const paraContent = `Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
+class App extends Component {
+    state = {
+        headerContent: 'Introduction to Web Component using React JS',
 
-    Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.`
+        paraContent: `React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
 
-    const sayHi = () => {
-        window.alert('welcome to web component')
+        Declarative views make your code more predictable and easier to debug.`,
+
+        count: 0,
+
+        show: true,
+
+        name: 'joydip'
     }
 
-    const appDesign = (
-        <article id='mainArticle'>
-            <WebComponentHeader headerData={headerContent} value={10} handler={sayHi} />
-            <WebComponentPara paraData={paraContent} data={'joydip'} caller={sayHi} />
-            <Sample />
-        </article>
-    )
-    return appDesign;
+    sayHi = (message) => {
+        console.log(message)
+        window.alert(message)
+    }
+
+    changeHeaderContentHandler = () => {
+        this.setState({
+            headerContent: 'Introduction to React JS'
+        }, () => {
+            console.log(this.state)
+        })
+        // setTimeout(() => {
+        //     console.log(this.state)
+        // }, 1000);
+
+    }
+    //WebComponentHeader({headerData:'Introduction to React JS', value:10, handler:sayHi})
+    render() {
+        const appDesign = (
+            <article id='mainArticle'>
+                <button onClick={this.changeHeaderContentHandler}>Change Header</button>
+                <WebComponentHeader headerData={this.state.headerContent} value={this.state.count} handler={this.sayHi} />
+                <WebComponentPara paraData={this.state.paraContent} data={this.state.name} caller={this.sayHi} />
+                <Sample />
+            </article>
+        )
+        return appDesign;
+    }
 }
 export default App;
 /**
  * const properties ={
- * headerData:'',
+ * headerData:'Introduction to React JS',
  * value:10,
  * handler:sayHi
  * }
- * const headerElement = WebComponentHeader(properties)
+ * const newheaderElement = WebComponentHeader(properties)
  */
