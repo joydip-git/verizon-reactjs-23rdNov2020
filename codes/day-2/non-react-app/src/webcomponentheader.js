@@ -1,10 +1,9 @@
 //webcomponentheader function => component
 //headerElement=> content
 
-const webcomponentheader = () => {
-
+const webcomponentheader = (args) => {
     //data
-    const headerContent = 'Introduction to Web Components';
+    //const headerContent = args.headerData;
 
     //style
     const headerStyle = {
@@ -13,10 +12,10 @@ const webcomponentheader = () => {
         border: '1px solid blue',
         borderRadius: '2px'
     }
-    //element
+    //elements
     const headerElement = document.createElement('h3');
-    //element style
 
+    //element style
     //headerElement.style = headerStyle;
     headerElement.style.backgroundColor = 'burlywood';
     headerElement.style.fontFamily = 'Segoe UI'
@@ -26,8 +25,18 @@ const webcomponentheader = () => {
     headerElement.style.textAlign = 'center'
 
     //element content
-    headerElement.innerHTML = headerContent;
-    //element
-    return headerElement;
+    //headerElement.innerHTML = headerContent;
+    headerElement.innerHTML = args.headerData;
+
+    const valueElement = document.createElement('span');
+    valueElement.style.textAlign = 'center'
+    valueElement.innerHTML = `<br/>Value:&nbsp;${args.value}`
+
+    const rootElement = document.createElement('div');
+    rootElement.appendChild(headerElement);
+    rootElement.appendChild(valueElement);
+    rootElement.addEventListener('mouseover', args.handler)
+
+    return rootElement;
 }
 export default webcomponentheader;

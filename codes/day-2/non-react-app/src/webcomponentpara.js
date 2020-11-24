@@ -1,9 +1,8 @@
-const webcomponentpara = () => {
-    const paraContent = `Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
-
-    Web components are based on existing web standards. Features to support web components are currently being added to the HTML and DOM specs, letting web developers easily extend HTML with new elements with encapsulated styling and custom behavior.`
-
+const webcomponentpara = (args) => {
     const paraElement = document.createElement('p', { id: 'contentPara' });
+    //event
+    paraElement.addEventListener('click', args.caller)
+
     // const paraStyle = {
     //     backgroundColor: 'beige',
     //     fontFamily: 'Segoe UI',
@@ -20,7 +19,8 @@ const webcomponentpara = () => {
     paraElement.style.borderRadius = '2px'
     paraElement.style.margin = '10px'
 
-    paraElement.innerHTML = paraContent;
+    //paraElement.innerHTML = paraContent;
+    paraElement.innerHTML = args.paraData;
     return paraElement;
 }
 export default webcomponentpara;
