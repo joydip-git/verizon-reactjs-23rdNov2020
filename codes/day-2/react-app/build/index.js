@@ -1,11 +1,13 @@
-define(["./app"], function (_app) {
+define(["./App", "react-dom"], function (_App, _reactDom) {
   "use strict";
 
-  _app = _interopRequireDefault(_app);
+  _App = _interopRequireDefault(_App);
+  _reactDom = _interopRequireDefault(_reactDom);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-  var appElement = (0, _app["default"])();
+  var appElement = (0, _App["default"])();
   var placeHolder = document.getElementById('root');
-  placeHolder.appendChild(appElement);
+
+  _reactDom["default"].render(appElement, placeHolder);
 });

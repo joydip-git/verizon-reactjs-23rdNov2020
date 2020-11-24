@@ -1,37 +1,33 @@
-define(["exports"], function (_exports) {
+define(["exports", "react"], function (_exports, _react) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports["default"] = void 0;
+  _react = _interopRequireDefault(_react);
 
-  var webcomponentpara = function webcomponentpara(args) {
-    var paraElement = document.createElement('p', {
-      id: 'contentPara'
-    }); //event
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-    paraElement.addEventListener('click', args.caller); // const paraStyle = {
-    //     backgroundColor: 'beige',
-    //     fontFamily: 'Segoe UI',
-    //     fontSize: 'medium',
-    //     border: '1px solid blue',
-    //     borderRadius: '2px',
-    //     margin: '10px'
-    // }
-    //paraElement.style = paraStyle;
+  var WebComponentPara = function WebComponentPara(args) {
+    var paraStyle = {
+      backgroundColor: 'beige',
+      fontFamily: 'Segoe UI',
+      fontSize: 'medium',
+      border: '1px solid blue',
+      borderRadius: '2px',
+      margin: '10px'
+    };
 
-    paraElement.style.backgroundColor = 'beige';
-    paraElement.style.fontFamily = 'Segoe UI';
-    paraElement.style.fontSize = 'medium';
-    paraElement.style.border = '1px solid blue';
-    paraElement.style.borderRadius = '2px';
-    paraElement.style.margin = '10px'; //paraElement.innerHTML = paraContent;
+    var paraElement = _react["default"].createElement('p', {
+      id: 'contentPara',
+      onClick: args.caller,
+      style: paraStyle
+    }, args.paraData);
 
-    paraElement.innerHTML = args.paraData;
     return paraElement;
   };
 
-  var _default = webcomponentpara;
+  var _default = WebComponentPara;
   _exports["default"] = _default;
 });

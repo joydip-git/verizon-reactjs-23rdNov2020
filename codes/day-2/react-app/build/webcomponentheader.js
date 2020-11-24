@@ -1,46 +1,40 @@
-define(["exports"], function (_exports) {
+define(["exports", "react"], function (_exports, _react) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports["default"] = void 0;
+  _react = _interopRequireDefault(_react);
 
-  //webcomponentheader function => component
-  //headerElement=> content
-  var webcomponentheader = function webcomponentheader(args) {
-    //data
-    //const headerContent = args.headerData;
-    //style
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+  var WebComponentHeader = function WebComponentHeader(args) {
     var headerStyle = {
       backgroundColor: 'burlywood',
       fontFamily: 'Segoe UI',
       border: '1px solid blue',
       borderRadius: '2px'
-    }; //elements
+    };
 
-    var headerElement = document.createElement('h3'); //element style
-    //headerElement.style = headerStyle;
+    var headerElement = _react["default"].createElement('h3', {
+      id: 'mainHeader',
+      style: headerStyle
+    }, args.headerData);
 
-    headerElement.style.backgroundColor = 'burlywood';
-    headerElement.style.fontFamily = 'Segoe UI';
-    headerElement.style.border = '1px solid blue';
-    headerElement.style.borderRadius = '2px';
-    headerElement.style.margin = '10px';
-    headerElement.style.textAlign = 'center'; //element content
-    //headerElement.innerHTML = headerContent;
+    var valueChildElements = [_react["default"].createElement('br'), "Value&nbsp;".concat(args.value)];
 
-    headerElement.innerHTML = args.headerData;
-    var valueElement = document.createElement('span');
-    valueElement.style.textAlign = 'center';
-    valueElement.innerHTML = "<br/>Value:&nbsp;".concat(args.value);
-    var rootElement = document.createElement('div');
-    rootElement.appendChild(headerElement);
-    rootElement.appendChild(valueElement);
-    rootElement.addEventListener('mouseover', args.handler);
+    var valueElement = _react["default"].createElement('span', {
+      id: 'valueSpan'
+    }, valueChildElements);
+
+    var rootElement = _react["default"].createElement('div', {
+      onMouseOver: args.handler
+    }, [headerElement, valueElement]);
+
     return rootElement;
   };
 
-  var _default = webcomponentheader;
+  var _default = WebComponentHeader;
   _exports["default"] = _default;
 });
