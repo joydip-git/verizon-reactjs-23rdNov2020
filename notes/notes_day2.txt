@@ -46,6 +46,16 @@ npm i webpack webpack-cli babel-loader css-loader style-loader html-loader file-
 create a configuration file for webpack
 create scripts for running webpack in dev and prod mode
 
+React JS:
+a. components:
+i. functional component: just to render some react element(s), can receive values/callbacks through properties from parent component
+
+ii. class component: to render react element(s), provides state property, render function, setState function to update the state, can receive values/callbacks through properties from parent component
+
+
+
+
+
 
 
 

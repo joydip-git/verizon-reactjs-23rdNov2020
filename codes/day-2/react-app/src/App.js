@@ -1,6 +1,5 @@
 import WebComponentHeader from './WebComponentHeader'
 import WebComponentPara from './WebComponentPara'
-import Sample from './Sample'
 import React, { Component } from 'react'
 
 class App extends Component {
@@ -23,6 +22,23 @@ class App extends Component {
         window.alert(message)
     }
 
+    increaseCountHandler = () => {
+        this.setState((previousState) => {
+            console.log(previousState)
+            return {
+                count: previousState.count + 1
+            }
+        }, () => console.log(this.state))
+        /*
+        this.setState((previousState, props) => {
+            console.log(previousState)
+            return {
+                count: previousState.count + props.randomValue + 1
+            }
+        }, () => console.log(this.state))
+        */
+    }
+
     changeHeaderContentHandler = () => {
         this.setState({
             headerContent: 'Introduction to React JS'
@@ -36,18 +52,19 @@ class App extends Component {
     }
     //WebComponentHeader({headerData:'Introduction to React JS', value:10, handler:sayHi})
     render() {
+        console.log(this.props)
         const appDesign = (
             <article id='mainArticle'>
                 <button onClick={this.changeHeaderContentHandler}>Change Header</button>
-                <WebComponentHeader headerData={this.state.headerContent} value={this.state.count} handler={this.sayHi} />
+                <WebComponentHeader headerData={this.state.headerContent} value={this.state.count} handler={this.increaseCountHandler} />
                 <WebComponentPara paraData={this.state.paraContent} data={this.state.name} caller={this.sayHi} />
-                <Sample />
             </article>
         )
         return appDesign;
     }
 }
 export default App;
+
 /**
  * const properties ={
  * headerData:'Introduction to React JS',

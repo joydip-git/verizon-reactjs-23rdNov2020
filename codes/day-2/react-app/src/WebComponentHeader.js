@@ -4,7 +4,7 @@ import React from 'react'
  * args = {
  * headerData:'',
  * value:10,
- * handler:sayHi
+ * handler:incresaeCountHandler
  * }
  */
 const WebComponentHeader = (args) => {
@@ -19,7 +19,7 @@ const WebComponentHeader = (args) => {
     }
     const headerMessage = 'message from header component';
     const rootElement = (
-        <div onMouseOver={() => args.handler(headerMessage)}>
+        <div onClick={args.handler}>
             <h3 id='mainHeader' style={headerStyle}>
                 {args.headerData}
             </h3>
@@ -50,7 +50,7 @@ export default WebComponentHeader;
             </span>]
  * }
  * }
- * 
+ *
  * //new react element
  * {
  * type:'div',
