@@ -49,9 +49,13 @@ export default class PersonList extends Component {
                 </div>
                 <div style={{ float: "right", border: '1px solid red', borderRadius: '5px', margin: '50px', backgroundColor: 'beige' }}>
                     {
-                        (this.state.selectedPerson !== null) && (
-                            <PersonDetail personData={this.state.selectedPerson} />
-                        )
+                        (this.state.selectedPerson !== null) ?
+                            (
+                                <PersonDetail personData={this.state.selectedPerson} />
+                            ) :
+                            (
+                                <span>No person selected</span>
+                            )
                     }
                 </div>
             </div>
