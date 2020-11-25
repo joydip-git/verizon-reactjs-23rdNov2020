@@ -1,6 +1,7 @@
 import React from 'react'
 
 function PersonDetail(props) {
+    console.log('[PD] rendered')
     const { personData, updatePerson } = props;
     const inputBackColor = {
         backgroundColor: 'burlywood',

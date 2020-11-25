@@ -2,6 +2,7 @@ import React from 'react'
 import './PersonCard.css'
 
 export default function PersonCard(props) {
+    console.log('[PC] rendered')
     let design = (
         <div className='personStyle' onClick={() => props.selectPerson(props.person.id)}>
             Name:&nbsp;{props.person.name}

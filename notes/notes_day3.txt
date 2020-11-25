@@ -4,3 +4,55 @@ npm i create-react-app -g
 create-react-app react-app
 
 npx create-react-app react-app
+
+Lifecycle of component:
+
+getdata(){ fetch('url').then(data=>this.setState({prop:data})).catch()}
+
+class A extends Component{
+	constructor(props){
+		super(props)
+		//this.state = {}
+		//this.test = this.test.bind(this);                
+	}
+	state={}
+	//test(){  }
+	test =()=>{}
+}
+
+const App = ()=>{
+  return (<A data={10}/> )
+}
+
+let aObj = new A({ data: 10 })
+
+aObj.render()
+
+
+a. creation and mounting:
+   i. constructor:
+      gets executed only once during the lifetime of component object and called during the creation of that object
+      explicitly write when you need to initialize state or need to bind member functions with current context
+      NOTE: no side-effect causing code here
+
+   ii. static getDerivedStateFromProps(newProps, previousState)
+      gets executed everytime, even for the very first time (when the object is created, after constructor)
+      after the first time, everytime this function will be getting executed first before any other lifecyle hooks
+      purpose: to re-set the state
+      return a new state (JS object) or null
+      NOTE: no side-effect causing code here
+
+   iii. render()
+       gets executed for the very first time as well as everytime whenever the state of this component gets updated or parent component gets rendered
+       return a new react element (primitive value/ reference types)
+       NOTE: no side-effect causing code here directly
+
+   iv. componentDidMount():
+       gets executed only one time during the entire lifecycle of the component
+       returns: NOTHING
+       NOTE: side-effect causing code can be written to reset the state and re-render the VDOM to update already created ADOM
+
+
+b. updation:
+c. desctruction:
+d. error:
