@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { getPeople } from '../data/peopleData';
 import PersonCard from './PersonCard';
 import PersonDetail from './PersonDetail';
 
@@ -24,10 +25,13 @@ export default class PersonList extends Component {
     }
 
     componentDidMount() {
-        //getting data from some database/file/restful api app
-        this.setState({
-            value: 20
-        })
+        console.log('[PL] mounted...')
+        const peopleArray = getPeople()
+        if (peopleArray !== null && peopleArray.length > 0) {
+            this.setState({
+                people: peopleArray
+            })
+        }
     }
 
     selectPersonHandler = (personId) => {
@@ -61,26 +65,31 @@ export default class PersonList extends Component {
         return (
             <div style={{ width: '600px' }}>
                 {
-                    /* 
-                    <button onClick={() => this.setState({ value: 20 })}>Update Value</button> */
-                }
-                <div style={{ float: "left" }}>
-                    {
-                        this.state.people.map(
-                            (p, index) => {
-                                return <PersonCard person={p} key={p.id} selectPerson={this.selectPersonHandler} />
-                            }
-                        )
-                    }
-                </div>
-                <div style={{ float: "right", border: '1px solid red', borderRadius: '5px', margin: '50px', backgroundColor: 'beige' }}>
-                    {
-                        (this.state.selectedPerson !== null) &&
+                    (this.state.people.length > 0) ?
                         (
-                            <PersonDetail personData={this.state.selectedPerson} updatePerson={this.updatePersonHandler} />
-                        )
-                    }
-                </div>
+                            <div style={{ float: "left" }}>
+                                {
+                                    this.state.people.map(
+                                        (p, index) => {
+                                            return <PersonCard person={p} key={p.id} selectPerson={this.selectPersonHandler} />
+                                        }
+                                    )
+                                }
+                            </div>
+                        ) :
+                        (<span>loading....</span>)
+                }
+                <br />
+                {
+                    (this.state.selectedPerson !== null) ?
+                        (
+                            <div style={{ float: "right", border: '1px solid red', borderRadius: '5px', margin: '50px', backgroundColor: 'beige' }}>
+                                <PersonDetail personData={this.state.selectedPerson} updatePerson={this.updatePersonHandler} />
+
+                            </div>
+                        ) :
+                        (<span>please select a person...</span>)
+                }
             </div>
         );
     }
