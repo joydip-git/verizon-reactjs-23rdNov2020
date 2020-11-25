@@ -9,3 +9,14 @@ export default function PersonCard(props) {
     )
     return design;
 }
+/**
+ * {
+ *   type:'div',
+ *   key:null,
+ *   ref:null,
+ *   props:{
+ *     person:{},
+ *     children:[{},{},{}]
+ *   }
+ * }
+ */

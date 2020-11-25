@@ -31,8 +31,8 @@ export default class PersonList extends Component {
             <div>
                 {
                     this.state.people.map(
-                        (p) => {
-                            return <PersonCard person={p} />
+                        (p, index) => {
+                            return <PersonCard person={p} key={p.id} />
                         }
                     )
                 }
