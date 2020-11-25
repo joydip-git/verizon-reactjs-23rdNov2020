@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getPeople } from '../data/peopleData';
+import { getPeople, updatePeople } from '../data/peopleData';
 import PersonCard from './PersonCard';
 import PersonDetail from './PersonDetail';
 
@@ -33,17 +33,22 @@ export default class PersonList extends Component {
             })
         }
     }
+
     getSnapshotBeforeUpdate(oldProps, previousState) {
         console.log('[PL] getSnapshotBeforeUpdate')
     }
+
     componentDidUpdate(oldProps, previousState, snapshot) {
         console.log('[PL] componentDidUpdate')
     }
 
     selectPersonHandler = (personId) => {
-        let found = this.state.people.find((p) => p.id === personId);
+        //let found = this.state.people.find((p) => p.id === personId);
+        // this.setState({
+        //     selectedPerson: found
+        // })
         this.setState({
-            selectedPerson: found
+            selectedPerson: personId
         })
     }
 
@@ -57,6 +62,7 @@ export default class PersonList extends Component {
         let copyOfPeople = [...this.state.people]
         copyOfPeople[foundIndex] = copyOfFound
 
+        updatePeople(copyOfPeople);
         this.setState({
             people: copyOfPeople,
             selectedPerson: copyOfFound
