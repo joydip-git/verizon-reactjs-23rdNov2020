@@ -41,6 +41,7 @@ a. creation and mounting:
       purpose: to re-set the state
       return a new state (JS object) or null
       NOTE: no side-effect causing code here
+      this.props gets updated after getDerivedStateFromProps in this creation stage
 
    iii. render()
        gets executed for the very first time as well as everytime whenever the state of this component gets updated or parent component gets rendered
@@ -53,6 +54,26 @@ a. creation and mounting:
        NOTE: side-effect causing code can be written to reset the state and re-render the VDOM to update already created ADOM
 
 
-b. updation:
-c. desctruction:
+b. updation: parent component is rendered thus cauing children components to be rendered or state change in that component
+   i.   static getDerivedStateFromProps(newProps, previousState)
+
+   ii.  shouldComponentUpdate(newProps,previousState):
+        gets executed everytime after creation stage
+	returns: boolean (true/false)
+        NOTE: no side-effect causing code here directly
+        use to stop unnecessary rendering of component design (part of VDOM)
+        this.props is updated after both getDerivedStateFromProps and shouldComponentUpdate have finished their job and shouldComponentUpdate has returned true
+
+   iii. render
+
+   iv.  getSnapshotBeforeUpdate(oldProps, previousState)
+        gets executed everytime after creation stage
+
+   v.   componentDidUpdate(oldProps, previousState, snapshot)
+        gets executed everytime after creation stage
+
+
+c. destruction:
+
+
 d. error:

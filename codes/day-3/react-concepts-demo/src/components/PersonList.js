@@ -33,6 +33,12 @@ export default class PersonList extends Component {
             })
         }
     }
+    getSnapshotBeforeUpdate(oldProps, previousState) {
+        console.log('[PL] getSnapshotBeforeUpdate')
+    }
+    componentDidUpdate(oldProps, previousState, snapshot) {
+        console.log('[PL] componentDidUpdate')
+    }
 
     selectPersonHandler = (personId) => {
         let found = this.state.people.find((p) => p.id === personId);
