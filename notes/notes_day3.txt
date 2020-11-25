@@ -1,0 +1,6 @@
+1. create-react-app tool 
+
+npm i create-react-app -g
+create-react-app react-app
+
+npx create-react-app react-app
