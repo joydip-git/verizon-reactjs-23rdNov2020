@@ -1,0 +1,9 @@
+.personStyle {
+  background-color: aquamarine;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  border-radius: 5px;
+  border: 1px solid green;
+  width: 100px;
+  margin: 50px;
+}

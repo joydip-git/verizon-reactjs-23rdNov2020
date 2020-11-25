@@ -1,12 +1,10 @@
+import PersonList from '../components/PersonList';
 import './App.css';
 
-/**
- * classes = {App-Header, App:}
- */
 function App() {
   return (
     <div className="App">
-      Hello React JS
+      <PersonList />
     </div>
   );
 }
