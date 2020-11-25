@@ -51,7 +51,6 @@ export default class PersonList extends Component {
         })
     }
     render() {
-
         return (
             <div style={{ width: '600px' }}>
                 <div style={{ float: "left" }}>
