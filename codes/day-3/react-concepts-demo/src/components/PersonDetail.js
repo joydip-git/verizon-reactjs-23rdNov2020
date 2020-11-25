@@ -1,11 +1,14 @@
 import React from 'react'
 
 function PersonDetail(props) {
-    const { personData } = props;
+    const { personData, updatePerson } = props;
     const inputBackColor = {
         backgroundColor: 'burlywood',
         color: 'black'
     }
+    // const passPersonData = (event) => {
+    //     updatePerson(event.target.value)
+    // }
     return (
         <table style={{ margin: '10px' }}>
             <tr>
@@ -15,7 +18,7 @@ function PersonDetail(props) {
                         type='text'
                         value={personData.name}
                         style={inputBackColor}
-                        onChange={ } /></td>
+                        onChange={(event) => updatePerson(personData.id, 'name', event.target.value)} /></td>
             </tr>
             <tr>
                 <td>Age:&nbsp;</td>
@@ -24,7 +27,8 @@ function PersonDetail(props) {
                         type='text'
                         value={personData.age}
                         style={inputBackColor}
-                        onChange={ } />
+                        onChange={(event) => updatePerson(personData.id, 'age', parseInt(event.target.value))}
+                    />
                 </td>
             </tr>
             <tr>
@@ -33,7 +37,8 @@ function PersonDetail(props) {
                     type='text'
                     value={personData.location}
                     style={inputBackColor}
-                    onChange={ } />
+                    onChange={(event) => updatePerson(personData.id, 'location', event.target.value)}
+                />
                 </td>
             </tr>
         </table>

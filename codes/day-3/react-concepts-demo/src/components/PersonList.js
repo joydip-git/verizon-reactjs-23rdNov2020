@@ -34,6 +34,22 @@ export default class PersonList extends Component {
             selectedPerson: found
         })
     }
+
+    updatePersonHandler = (personId, propName, newPropValue) => {
+        let found = this.state.people.find(p => p.id === personId);
+        let foundIndex = this.state.people.findIndex(p => p.id === personId)
+
+        let copyOfFound = { ...found };
+        copyOfFound[propName] = newPropValue;
+
+        let copyOfPeople = [...this.state.people]
+        copyOfPeople[foundIndex] = copyOfFound
+
+        this.setState({
+            people: copyOfPeople,
+            selectedPerson: copyOfFound
+        })
+    }
     render() {
 
         return (
@@ -51,7 +67,7 @@ export default class PersonList extends Component {
                     {
                         (this.state.selectedPerson !== null) ?
                             (
-                                <PersonDetail personData={this.state.selectedPerson} />
+                                <PersonDetail personData={this.state.selectedPerson} updatePerson={this.updatePersonHandler} />
                             ) :
                             (
                                 <span>No person selected</span>
