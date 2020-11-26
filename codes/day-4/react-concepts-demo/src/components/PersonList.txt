@@ -1,0 +1,75 @@
+import React, { Component } from 'react'
+import PersonCard from './PersonCard';
+
+export default class PersonList extends Component {
+    // constructor() {
+    //     super()
+    //     // this.state = {
+
+    //     // }
+    // }
+    state = {
+        people: [
+            {
+                id: 1,
+                name: 'sunil',
+                age: 20,
+                location: 'bangalore'
+            },
+            {
+                id: 2,
+                name: 'anil',
+                age: 30,
+                location: 'chennai'
+            },
+            {
+                id: 3,
+                name: 'joydip',
+                age: 40,
+                location: 'mumbai'
+            }
+        ]
+    }
+
+    // transformNumber = (number) => {
+    //     return 'Number: ' + (number * 5);
+    // }
+    // numbers = [1, 2, 3, 4];
+
+    // mapArray = (logic) => {
+    //     const result = [];
+    //     for (let i = 0; i < this.numbers.length; i++) {
+    //         let res = logic(this.numbers[i]);
+    //         result.push(res);
+    //     }
+    //     return result;
+    // }
+    createPersonCard = (p) => {
+        //return PersonCard({ person: p })
+        return <PersonCard person={p} />
+    }
+    render() {
+        // const transfomredNumbers = this.mapArray(this.transformNumber)
+        // console.log(transfomredNumbers)
+
+        let personCardArray = this.state.people.map(this.createPersonCard);
+        return (
+            <div>
+                {
+                    personCardArray
+                }
+            </div>
+        );
+    }
+}
+/**
+ * PersonCard({})
+ * {
+ *   person:{
+                id: 1,
+                name: 'sunil',
+                age: 20,
+                location: 'bangalore'
+            }
+ * }
+ */
