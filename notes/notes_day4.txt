@@ -1,0 +1,12 @@
+render prop
+ref--> createRef and callbackRef, forwardRef
+hooks
+
+http requests 
+routing
+redux and its middlewares
+
+
+Mixin links:
+https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
+https://javascript.info/mixins
