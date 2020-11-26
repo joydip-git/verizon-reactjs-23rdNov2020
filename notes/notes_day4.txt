@@ -10,3 +10,16 @@ redux and its middlewares
 Mixin links:
 https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html
 https://javascript.info/mixins
+
+
+Client				route				route/request body data	returns
+--------------------------------------------------------------------------------------------------------------------
+HTTP:GET	http://127.0.0.1:8081/productservice		 NA			an array of products
+
+HTTP:GET	http://127.0.0.1:8081/productservice/{id}     	productid		a product object
+
+HTTP:DELETE	http://127.0.0.1:8081/productservice/{id}	productid		deletes a product with the given id and returns an object with 'message' and 'data' property (data=array of products exculding the deleted product)
+
+HTTP:POST	http://127.0.0.1:8081/productservice		product [JSON]		add a new product in the JSON file and returns an object with 'message' and 'data' property (data=array of products including the added product)
+
+HTTP:PUT	http://127.0.0.1:8081/productservice		product [JSON]		update an existing product in the JSON file and returns an object with 'message' and 'data' property (data=array of products including the updated product)
