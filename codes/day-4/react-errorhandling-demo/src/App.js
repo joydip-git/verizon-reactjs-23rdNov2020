@@ -9,10 +9,13 @@ function App() {
 
   return (
     <div className="App">
-      <Hero heroName={'Batman'} />
-      <ErrorBoundary errorHandler={logError}>
+      {/* <ErrorBoundary errorHandler={logError}> */}
+        <Hero heroName={'Batman'} />
+        {/* <ErrorBoundary errorHandler={logError}> */}
+        {/* <Hero heroName={'Joker'} errorHandler={logError} /> */}
         <Hero heroName={'Joker'} />
-      </ErrorBoundary>
+        {/* </ErrorBoundary> */}
+      {/* </ErrorBoundary> */}
     </div>
   );
 }

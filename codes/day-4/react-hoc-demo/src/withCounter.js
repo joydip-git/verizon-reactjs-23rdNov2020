@@ -1,10 +1,10 @@
 import { Component } from "react";
 
-const withCounter = (OriginalComponent) => {
+const withCounter = (OriginalComponent, initialState) => {
 
     class WithCounter extends Component {
         state = {
-            counter: 0
+            counter: initialState
         }
         increaseCounterHandler = () => {
             this.setState(ps => {
@@ -17,7 +17,14 @@ const withCounter = (OriginalComponent) => {
             console.log(error)
         }
         render() {
-            return <OriginalComponent counterValue={this.state.counter} counterHandler={this.increaseCounterHandler} logger={this.logError} />
+            return (
+                <OriginalComponent
+                    counterValue={this.state.counter}
+                    counterHandler={this.increaseCounterHandler}
+                    logger={this.logError}
+                    {...this.props}
+                />
+            )
         }
     }
 

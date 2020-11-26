@@ -1,9 +1,11 @@
 import React from 'react'
 import withCounter from './withCounter'
 
-let ClickCounter = ({ counterValue, counterHandler }) => {
+let ClickCounter = ({ counterValue, counterHandler, data }) => {
     return (
         <div>
+            Data:&nbsp;{data}
+            <br />
             Click Counter Value:&nbsp;{counterValue}
             <br />
             <button onClick={counterHandler}>
@@ -12,5 +14,5 @@ let ClickCounter = ({ counterValue, counterHandler }) => {
         </div>
     )
 }
-ClickCounter = withCounter(ClickCounter)
+ClickCounter = withCounter(ClickCounter, 100)
 export default ClickCounter;

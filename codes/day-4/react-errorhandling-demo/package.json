@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "porp-types": "0.0.1-security",
     "prop-types": "^15.7.2"
   }
 }

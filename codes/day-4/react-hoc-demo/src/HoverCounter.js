@@ -1,10 +1,12 @@
 import React from 'react'
 import withCounter from './withCounter'
 
-let HoverCounter = ({ counterValue, counterHandler }) => {
+let HoverCounter = ({ counterValue, counterHandler, value }) => {
 
     return (
         <div>
+            Value:&nbsp;{value}
+            <br />
             Hover Counter Value:&nbsp;{counterValue}
             <br />
             <span onMouseOver={counterHandler} style={{ backgroundColor: 'aquamarine', border: '1px solid red', width: '100px' }}>
@@ -14,5 +16,5 @@ let HoverCounter = ({ counterValue, counterHandler }) => {
     )
 
 }
-HoverCounter = withCounter(HoverCounter);
+HoverCounter = withCounter(HoverCounter, 200);
 export default HoverCounter;
