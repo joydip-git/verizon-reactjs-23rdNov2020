@@ -1,7 +1,7 @@
 render prop
 ref--> createRef and callbackRef, forwardRef
 
-hooks
+hooks: APIs provides state, lifecycle events etc. into functional component
 http requests 
 routing
 redux and its middlewares
