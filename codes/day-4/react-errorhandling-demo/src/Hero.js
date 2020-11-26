@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import handleError from './handleError'
 
@@ -51,7 +51,7 @@ Hero.propTypes = {
 const logError = (errorDetails) => {
     console.log(errorDetails)
 }
-export default handleError(Hero, logError)
+export default handleError(memo(Hero), logError)
 //export default Hero;
 
 
