@@ -79,7 +79,7 @@ c. destruction:
    a. componentWillUnmount()  
 
 d. error:
-	
+   
 
 
 let products=[
