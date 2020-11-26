@@ -11,7 +11,8 @@ export default class PersonList extends Component {
     }
     state = {
         people: [],
-        selectedPerson: null
+        selectedPerson: null,
+        show: true
     }
 
     static getDerivedStateFromProps(newProps, previousState) {
@@ -71,34 +72,38 @@ export default class PersonList extends Component {
         console.log(this.props)
         console.log(this.state)
         return (
-            <div style={{ width: '600px' }}>
-                {
-                    (this.state.people.length > 0) ?
-                        (
-                            <div style={{ float: "left" }}>
-                                {
-                                    this.state.people.map(
-                                        (p, index) => {
-                                            return <PersonCard person={p} key={p.id} selectPerson={this.selectPersonHandler} />
-                                        }
-                                    )
-                                }
-                            </div>
-                        ) :
-                        (<span>loading....</span>)
-                }
-                <br />
-                {
-                    (this.state.selectedPerson !== null) ?
-                        (
-                            <div style={{ float: "right", border: '1px solid red', borderRadius: '5px', margin: '50px', backgroundColor: 'beige' }}>
-                                <PersonDetail personData={this.state.selectedPerson} updatePerson={this.updatePersonHandler} />
+            <>
+                <button onClick={() => this.setState(ps => { return { show: !ps.show } })}>
+                    {this.state.show ? 'Dismount' : 'Mount'} PD</button>
+                <div style={{ width: '600px' }}>
+                    {
+                        (this.state.people.length > 0) ?
+                            (
+                                <div style={{ float: "left" }}>
+                                    {
+                                        this.state.people.map(
+                                            (p, index) => {
+                                                return <PersonCard person={p} key={p.id} selectPerson={this.selectPersonHandler} />
+                                            }
+                                        )
+                                    }
+                                </div>
+                            ) :
+                            (<span>loading....</span>)
+                    }
+                    <br />
+                    {
+                        (this.state.selectedPerson !== null && this.state.show) ?
+                            (
+                                <div style={{ float: "right", border: '1px solid red', borderRadius: '5px', margin: '50px', backgroundColor: 'beige' }}>
+                                    <PersonDetail personData={this.state.selectedPerson} updatePerson={this.updatePersonHandler} />
 
-                            </div>
-                        ) :
-                        (<span>please select a person...</span>)
-                }
-            </div>
+                                </div>
+                            ) :
+                            (<span>please select a person...</span>)
+                    }
+                </div>
+            </>
         );
     }
 }

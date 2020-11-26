@@ -71,11 +71,13 @@ class PersonDetail extends Component {
         //     this.setState({ person: null })
         // }
     }
-    getSnapshotBeforeUpdate(oldProps, previousState) {
+    getSnapshotBeforeUpdate(oldProps, oldState) {
         console.log('[PD] getSnapshotBeforeUpdate')
+        return { x: 10, y: 20 };
     }
     componentDidUpdate(oldProps, oldState, snapshot) {
         console.log('[PD] componentDidUpdate')
+        console.log(snapshot)
         if (this.props.personData !== oldProps.personData && (this.state.person.id === 0 || this.state.person.id !== oldState.person.id))
             this.getData();
 
@@ -84,6 +86,9 @@ class PersonDetail extends Component {
         console.log('[PD] mounted')
         console.log(this.props.personData)
         this.getData()
+    }
+    componentWillUnmount() {
+        console.log('[PD] unmounted')
     }
     render() {
         console.log('[PD] rendered')

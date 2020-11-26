@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './PersonCard.css'
 
-export default function PersonCard(props) {
+let PersonCard = (props) => {
     console.log('[PC] rendered')
     let design = (
         <div className='personStyle' onClick={() => props.selectPerson(props.person.id)}>
@@ -10,6 +10,9 @@ export default function PersonCard(props) {
     )
     return design;
 }
+PersonCard = memo(PersonCard);
+export default PersonCard;
+
 /**
  * {
  *   type:'div',

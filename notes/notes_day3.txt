@@ -76,10 +76,10 @@ b. updation: parent component is rendered thus cauing children components to be 
 
 
 c. destruction:
-
+   a. componentWillUnmount()  
 
 d. error:
-
+	
 
 
 let products=[
