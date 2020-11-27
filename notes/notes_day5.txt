@@ -62,6 +62,13 @@ state hook vs. this.state and this.setState
 fetch data from RESTFul API server using HTTP methods:
 client side API: Axios
 
+material UI
+saga middleware in redux
+JWT
+Next.js
+React Fiber
+React Native
+
 
 
 
