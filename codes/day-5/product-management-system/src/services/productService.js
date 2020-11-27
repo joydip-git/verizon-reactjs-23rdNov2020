@@ -23,6 +23,6 @@ export const updateProductRecord = (product) => {
 }
 
 export const deletProductRecordById = (productId) => {
-    //Promise<AxiosResponse<{ message:'updated successfully', data:[]}>>
+    //Promise<AxiosResponse<{ message:'deleted successfully', data:[]}>>
     return axiosInstance.delete(`/${productId}`);
 }
