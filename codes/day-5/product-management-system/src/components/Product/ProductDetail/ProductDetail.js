@@ -17,18 +17,7 @@ const ProductDetail = ({ productId }) => {
     }
 
     useEffect(() => {
-        getProductRecordById(productId)
-            .then(
-                (response) => {
-                    updateState(response.data, false, null)
-                },
-                (reason) => {
-                    updateState(null, false, reason)
-                }
-            )
-            .catch((e) => {
-                updateState(null, false, e.massage)
-            })
+        //()=>dispatch(fetchProductByIdAsync,productId)
     }, [productId])
 
     let design = null;
