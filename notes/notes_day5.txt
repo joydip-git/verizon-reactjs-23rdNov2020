@@ -1,0 +1,67 @@
+version: 16.8 
+Hooks
+
+React APIs:
+state hook: useState
+effect hook: useEffect
+ref hook: useRef
+memo hook: useMemo
+context: useContext
+reducer: useReducer
+
+React Redux:
+dispatch: useDispatch
+selector: useSeelector
+
+React Routing:
+history: useHistory
+param: useParams
+location: useLocation
+
+1. class component:
+class keyword, this keyword
+
+A obj = new A();
+class A{ public A(){this}}
+
+class A{
+
+   sayHi=()=>{}
+}
+A.prototype.sayHi=
+
+2. reusability: HOC, RP (mixin)
+
+3. lifecycle events:
+state={
+p1:
+p2:
+p3:
+}
+componentDidUpdate(){
+	  
+}
+
+4. maintain state of data
+
+
+state hook vs. this.state and this.setState
+1. you can avail as many states as you want in functional component
+2. states need not be a JS object always. it can be any primitive type or an array or a string also
+3. setFunction in state hook replaces the old state by the new state (does not even copy the values from the old state)
+4. setFunction in state hook does not pass props to the callback function as second argument 
+5. setFunction in state hook does not have any option to pass a callback as second argument
+
+
+
+
+
+
+
+
+
+
+
+
+
+
