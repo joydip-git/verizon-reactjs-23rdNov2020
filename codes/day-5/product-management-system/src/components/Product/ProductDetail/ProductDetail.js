@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import { getProductRecordById } from '../../../services/productService'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory, useParams } from 'react-router-dom'
+import { fetchProductByIdAsyncCallbackCreator } from '../../../redux/async-callbacks/productAsyncCallbacks'
 
-const ProductDetail = ({ productId }) => {
-    const [productState, setProductState] = useState({ product: null, loading: true, error: null });
+// const ProductDetail = ({history, location, match}) => {
+const ProductDetail = () => {
+    //console.log(match.params.id)
+    const productId = parseInt(useParams().id)
+    const history = useHistory();
 
-    const updateState = (data, status, e) => {
-        setProductState(ps => {
-            return {
-                ...ps,
-                product: data,
-                loading: status,
-                error: e
-            }
-        })
-    }
+    const product = useSelector((combinedState) => combinedState.single.product)
+    const error = useSelector((combinedState) => combinedState.single.error)
+    const loading = useSelector((combinedState) => combinedState.single.loading)
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        //()=>dispatch(fetchProductByIdAsync,productId)
-    }, [productId])
+        const callback = fetchProductByIdAsyncCallbackCreator(productId);
+        dispatch(callback)
+    }, [])
 
     let design = null;
-    const { loading, error, product } = productState;
 
     if (loading) {
         design = <span>Loading...</span>
@@ -30,13 +29,17 @@ const ProductDetail = ({ productId }) => {
     } else if (product === null || product === undefined) {
         design = <span>product not found</span>
     } else {
-        design = product.productName
+        design = (
+            <div>
+                Name:&nbsp;{product.productName}
+                <br />
+                <br />
+                <button className='btn btn-primary' onClick={() => history.push('/products')}>Back</button>
+            </div>
+        )
     }
     return design;
-}
 
-ProductDetail.propTypes = {
-    productId: PropTypes.number.isRequired
 }
 
 export default ProductDetail

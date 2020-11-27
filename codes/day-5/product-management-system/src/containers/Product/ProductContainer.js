@@ -1,40 +1,17 @@
 import React, { Component } from 'react'
-import ProductDetail from '../../components/Product/ProductDetail/ProductDetail'
-import { getProductRecords } from '../../services/productService'
+import { connect } from 'react-redux';
+import ProductList from '../../components/Product/ProductList/ProductList';
+import { fetchProductsAsyncCallbackCreator } from '../../redux/async-callbacks/productAsyncCallbacks'
 
 export class ProductContainer extends Component {
-    state = {
-        products: [],
-        loading: true,
-        error: null,
-        productId: 0
-    }
 
-    updateState = (data, status, e) => {
-        this.setState({
-            products: data,
-            loading: status,
-            error: e
-        })
-    }
     componentDidMount() {
-        getProductRecords()
-            .then(
-                (response) => {
-                    this.updateState(response.data, false, null);
-                },
-                (reason) => {
-                    this.updateState([], false, reason);
-                }
-            )
-            .catch(e => {
-                this.updateState([], false, e.message);
-            })
+        this.props.getProducts()
     }
 
     render() {
         let design = null;
-        const { loading, error, products, productId } = this.state;
+        const { loading, error, products } = this.props;
 
         if (loading) {
             design = <span>Loading...</span>
@@ -44,20 +21,29 @@ export class ProductContainer extends Component {
             design = <span>No recorsd found</span>
         } else {
             design = (
-                <>
-                    <div style={{ border: '2px solid black' }} onClick={() => this.setState({ productId: products[1].productId })}>
-                        <img src={products[1].imageUrl} alt='NA' title={products[1].productName} />
-                    </div>
-                    <br />
-                    <br />
-                    <div style={{ border: '2px solid blue' }}>
-                        {productId > 0 ? <ProductDetail productId={productId} /> : 'no product to display'}
-                    </div>
-                </>
+                <ProductList products={products} />
             )
         }
         return design;
     }
 }
 
-export default ProductContainer
+const mapStateToProps = (combinedState) => {
+    return {
+        products: combinedState.all.products,
+        error: combinedState.all.error,
+        loading: combinedState.all.loading
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getProducts: () => {
+            console.log(dispatch)
+            const callback = fetchProductsAsyncCallbackCreator()
+            dispatch(callback)
+        }
+    }
+}
+// const connector = connect(mapStateToProps, mapDispatchToProps);
+// export default connector(ProductContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)
