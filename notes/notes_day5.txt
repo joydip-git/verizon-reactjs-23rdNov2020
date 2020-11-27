@@ -59,6 +59,10 @@ state hook vs. this.state and this.setState
 5. setFunction in state hook does not have any option to pass a callback as second argument
 
 
+fetch data from RESTFul API server using HTTP methods:
+client side API: Axios
+
+
 
 
 
