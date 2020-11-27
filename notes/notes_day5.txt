@@ -41,6 +41,12 @@ p3:
 componentDidUpdate(){
 	  
 }
+componentDidUpdate(){
+	  
+}
+componentDidUpdate(){
+	  
+}
 
 4. maintain state of data
 

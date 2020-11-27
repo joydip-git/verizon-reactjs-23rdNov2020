@@ -37,7 +37,7 @@ function App() {
       <br />
       <CountComp countValue={appState.count} />
       <br />
-      <button onClick={updateCount}>Increase Count</button>
+      <button onClick={() => updateName('anil')}>Increase Count</button>
     </div>
   );
 }
